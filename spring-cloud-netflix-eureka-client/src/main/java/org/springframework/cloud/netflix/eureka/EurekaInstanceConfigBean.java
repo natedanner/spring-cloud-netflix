@@ -268,7 +268,7 @@ public class EurekaInstanceConfigBean implements CloudEurekaInstanceConfig, Envi
 	 * Flag to say that, when guessing a hostname, the IP address of the server should be
 	 * used in preference to the hostname reported by the OS.
 	 */
-	private boolean preferIpAddress = false;
+	private boolean preferIpAddress;
 
 	/**
 	 * If true the EurekaClient will be initialized asynchronously when the
@@ -628,30 +628,7 @@ public class EurekaInstanceConfigBean implements CloudEurekaInstanceConfig, Envi
 
 	@Override
 	public String toString() {
-		return new StringBuilder("EurekaInstanceConfigBean{").append("hostInfo=").append(hostInfo).append(", ")
-				.append("inetUtils=").append(inetUtils).append(", ").append("appname='").append(appname).append("', ")
-				.append("appGroupName='").append(appGroupName).append("', ").append("instanceEnabledOnit=")
-				.append(instanceEnabledOnit).append(", ").append("nonSecurePort=").append(nonSecurePort).append(", ")
-				.append("securePort=").append(securePort).append(", ").append("nonSecurePortEnabled=")
-				.append(nonSecurePortEnabled).append(", ").append("securePortEnabled=").append(securePortEnabled)
-				.append(", ").append("leaseRenewalIntervalInSeconds=").append(leaseRenewalIntervalInSeconds)
-				.append(", ").append("leaseExpirationDurationInSeconds=").append(leaseExpirationDurationInSeconds)
-				.append(", ").append("virtualHostName='").append(virtualHostName).append("', ").append("instanceId='")
-				.append(instanceId).append("', ").append("secureVirtualHostName='").append(secureVirtualHostName)
-				.append("', ").append("aSGName='").append(aSGName).append("', ").append("metadataMap=")
-				.append(metadataMap).append(", ").append("dataCenterInfo=").append(dataCenterInfo).append(", ")
-				.append("ipAddress='").append(ipAddress).append("', ").append("statusPageUrlPath='")
-				.append(statusPageUrlPath).append("', ").append("statusPageUrl='").append(statusPageUrl).append("', ")
-				.append("homePageUrlPath='").append(homePageUrlPath).append("', ").append("homePageUrl='")
-				.append(homePageUrl).append("', ").append("healthCheckUrlPath='").append(healthCheckUrlPath)
-				.append("', ").append("healthCheckUrl='").append(healthCheckUrl).append("', ")
-				.append("secureHealthCheckUrl='").append(secureHealthCheckUrl).append("', ").append("namespace='")
-				.append(namespace).append("', ").append("hostname='").append(hostname).append("', ")
-				.append("asyncClientInitialization=").append(asyncClientInitialization).append(", ")
-				.append("preferIpAddress=").append(preferIpAddress).append(", ").append("initialStatus=")
-				.append(initialStatus).append(", ").append("defaultAddressResolutionOrder=")
-				.append(Arrays.toString(defaultAddressResolutionOrder)).append(", ").append("environment=")
-				.append(environment).append(", ").append("}").toString();
+		return "EurekaInstanceConfigBean{" + "hostInfo=" + hostInfo + ", " + "inetUtils=" + inetUtils + ", " + "appname='" + appname + "', " + "appGroupName='" + appGroupName + "', " + "instanceEnabledOnit=" + instanceEnabledOnit + ", " + "nonSecurePort=" + nonSecurePort + ", " + "securePort=" + securePort + ", " + "nonSecurePortEnabled=" + nonSecurePortEnabled + ", " + "securePortEnabled=" + securePortEnabled + ", " + "leaseRenewalIntervalInSeconds=" + leaseRenewalIntervalInSeconds + ", " + "leaseExpirationDurationInSeconds=" + leaseExpirationDurationInSeconds + ", " + "virtualHostName='" + virtualHostName + "', " + "instanceId='" + instanceId + "', " + "secureVirtualHostName='" + secureVirtualHostName + "', " + "aSGName='" + aSGName + "', " + "metadataMap=" + metadataMap + ", " + "dataCenterInfo=" + dataCenterInfo + ", " + "ipAddress='" + ipAddress + "', " + "statusPageUrlPath='" + statusPageUrlPath + "', " + "statusPageUrl='" + statusPageUrl + "', " + "homePageUrlPath='" + homePageUrlPath + "', " + "homePageUrl='" + homePageUrl + "', " + "healthCheckUrlPath='" + healthCheckUrlPath + "', " + "healthCheckUrl='" + healthCheckUrl + "', " + "secureHealthCheckUrl='" + secureHealthCheckUrl + "', " + "namespace='" + namespace + "', " + "hostname='" + hostname + "', " + "asyncClientInitialization=" + asyncClientInitialization + ", " + "preferIpAddress=" + preferIpAddress + ", " + "initialStatus=" + initialStatus + ", " + "defaultAddressResolutionOrder=" + Arrays.toString(defaultAddressResolutionOrder) + ", " + "environment=" + environment + ", " + "}";
 	}
 
 }

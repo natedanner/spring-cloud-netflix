@@ -48,7 +48,7 @@ public class CloudEurekaTransportConfig implements EurekaTransportConfig {
 
 	private String bootstrapResolverStrategy;
 
-	private boolean applicationsResolverUseIp = false;
+	private boolean applicationsResolverUseIp;
 
 	@Override
 	public boolean useBootstrapResolverForQuery() {
@@ -192,21 +192,7 @@ public class CloudEurekaTransportConfig implements EurekaTransportConfig {
 
 	@Override
 	public String toString() {
-		return new StringBuilder("CloudEurekaTransportConfig{").append("sessionedClientReconnectIntervalSeconds=")
-				.append(sessionedClientReconnectIntervalSeconds).append(", ")
-				.append("retryableClientQuarantineRefreshPercentage=")
-				.append(retryableClientQuarantineRefreshPercentage).append(", ")
-				.append("bootstrapResolverRefreshIntervalSeconds=").append(bootstrapResolverRefreshIntervalSeconds)
-				.append(", ").append("applicationsResolverDataStalenessThresholdSeconds=")
-				.append(applicationsResolverDataStalenessThresholdSeconds).append(", ")
-				.append("asyncResolverRefreshIntervalMs=").append(asyncResolverRefreshIntervalMs).append(", ")
-				.append("asyncResolverWarmUpTimeoutMs=").append(asyncResolverWarmUpTimeoutMs).append(", ")
-				.append("asyncExecutorThreadPoolSize=").append(asyncExecutorThreadPoolSize).append(", ")
-				.append("readClusterVip='").append(readClusterVip).append("', ").append("writeClusterVip='")
-				.append(writeClusterVip).append("', ").append("bootstrapResolverForQuery=")
-				.append(bootstrapResolverForQuery).append(", ").append("bootstrapResolverStrategy='")
-				.append(bootstrapResolverStrategy).append("', ").append("applicationsResolverUseIp=")
-				.append(applicationsResolverUseIp).append(", ").append("}").toString();
+		return "CloudEurekaTransportConfig{" + "sessionedClientReconnectIntervalSeconds=" + sessionedClientReconnectIntervalSeconds + ", " + "retryableClientQuarantineRefreshPercentage=" + retryableClientQuarantineRefreshPercentage + ", " + "bootstrapResolverRefreshIntervalSeconds=" + bootstrapResolverRefreshIntervalSeconds + ", " + "applicationsResolverDataStalenessThresholdSeconds=" + applicationsResolverDataStalenessThresholdSeconds + ", " + "asyncResolverRefreshIntervalMs=" + asyncResolverRefreshIntervalMs + ", " + "asyncResolverWarmUpTimeoutMs=" + asyncResolverWarmUpTimeoutMs + ", " + "asyncExecutorThreadPoolSize=" + asyncExecutorThreadPoolSize + ", " + "readClusterVip='" + readClusterVip + "', " + "writeClusterVip='" + writeClusterVip + "', " + "bootstrapResolverForQuery=" + bootstrapResolverForQuery + ", " + "bootstrapResolverStrategy='" + bootstrapResolverStrategy + "', " + "applicationsResolverUseIp=" + applicationsResolverUseIp + ", " + "}";
 	}
 
 }

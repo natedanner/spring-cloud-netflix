@@ -270,7 +270,7 @@ public class EurekaClientConfigBean implements EurekaClientConfig, Ordered {
 	 *
 	 * The changes are effective at runtime.
 	 */
-	private boolean useDnsForFetchingServiceUrls = false;
+	private boolean useDnsForFetchingServiceUrls;
 
 	/**
 	 * Indicates whether or not this instance should register its information with eureka
@@ -370,7 +370,7 @@ public class EurekaClientConfigBean implements EurekaClientConfig, Ordered {
 	 * If set to false, the server will handle the request directly, If set to true, it
 	 * may send HTTP redirect to the client, with a new server location.
 	 */
-	private boolean allowRedirects = false;
+	private boolean allowRedirects;
 
 	/**
 	 * If set to true, local status updates via ApplicationInfoManager will trigger
@@ -405,13 +405,13 @@ public class EurekaClientConfigBean implements EurekaClientConfig, Ordered {
 	 * Indicates whether the client should enforce registration during initialization.
 	 * Defaults to false.
 	 */
-	private boolean shouldEnforceRegistrationAtInit = false;
+	private boolean shouldEnforceRegistrationAtInit;
 
 	/**
 	 * Order of the discovery client used by `CompositeDiscoveryClient` for sorting
 	 * available clients.
 	 */
-	private int order = 0;
+	private int order;
 
 	@Override
 	public boolean shouldGZipContent() {
@@ -998,47 +998,7 @@ public class EurekaClientConfigBean implements EurekaClientConfig, Ordered {
 
 	@Override
 	public String toString() {
-		return new StringBuilder("EurekaClientConfigBean{").append("propertyResolver=").append(propertyResolver)
-				.append(", ").append("enabled=").append(enabled).append(", ").append("transport=").append(transport)
-				.append(", ").append("registryFetchIntervalSeconds=").append(registryFetchIntervalSeconds).append(", ")
-				.append("instanceInfoReplicationIntervalSeconds=").append(instanceInfoReplicationIntervalSeconds)
-				.append(", ").append("initialInstanceInfoReplicationIntervalSeconds=")
-				.append(initialInstanceInfoReplicationIntervalSeconds).append(", ")
-				.append("eurekaServiceUrlPollIntervalSeconds=").append(eurekaServiceUrlPollIntervalSeconds).append(", ")
-				.append("proxyPort='").append(proxyPort).append("', ").append("proxyHost='").append(proxyHost)
-				.append("', ").append("proxyUserName='").append(proxyUserName).append("', ").append("proxyPassword='")
-				.append(proxyPassword).append("', ").append("eurekaServerReadTimeoutSeconds=")
-				.append(eurekaServerReadTimeoutSeconds).append(", ").append("eurekaServerConnectTimeoutSeconds=")
-				.append(eurekaServerConnectTimeoutSeconds).append(", ").append("backupRegistryImpl='")
-				.append(backupRegistryImpl).append("', ").append("eurekaServerTotalConnections=")
-				.append(eurekaServerTotalConnections).append(", ").append("eurekaServerTotalConnectionsPerHost=")
-				.append(eurekaServerTotalConnectionsPerHost).append(", ").append("eurekaServerURLContext='")
-				.append(eurekaServerURLContext).append("', ").append("eurekaServerPort='").append(eurekaServerPort)
-				.append("', ").append("eurekaServerDNSName='").append(eurekaServerDNSName).append("', ")
-				.append("region='").append(region).append("', ").append("eurekaConnectionIdleTimeoutSeconds=")
-				.append(eurekaConnectionIdleTimeoutSeconds).append(", ").append("registryRefreshSingleVipAddress='")
-				.append(registryRefreshSingleVipAddress).append("', ").append("heartbeatExecutorThreadPoolSize=")
-				.append(heartbeatExecutorThreadPoolSize).append(", ")
-				.append("heartbeatExecutorExponentialBackOffBound=").append(heartbeatExecutorExponentialBackOffBound)
-				.append(", ").append("cacheRefreshExecutorThreadPoolSize=").append(cacheRefreshExecutorThreadPoolSize)
-				.append(", ").append("cacheRefreshExecutorExponentialBackOffBound=")
-				.append(cacheRefreshExecutorExponentialBackOffBound).append(", ").append("serviceUrl=")
-				.append(serviceUrl).append(", ").append("gZipContent=").append(gZipContent).append(", ")
-				.append("useDnsForFetchingServiceUrls=").append(useDnsForFetchingServiceUrls).append(", ")
-				.append("registerWithEureka=").append(registerWithEureka).append(", ").append("preferSameZoneEureka=")
-				.append(preferSameZoneEureka).append(", ").append("logDeltaDiff=").append(logDeltaDiff).append(", ")
-				.append("disableDelta=").append(disableDelta).append(", ").append("fetchRemoteRegionsRegistry='")
-				.append(fetchRemoteRegionsRegistry).append("', ").append("availabilityZones=").append(availabilityZones)
-				.append(", ").append("filterOnlyUpInstances=").append(filterOnlyUpInstances).append(", ")
-				.append("fetchRegistry=").append(fetchRegistry).append(", ").append("dollarReplacement='")
-				.append(dollarReplacement).append("', ").append("escapeCharReplacement='").append(escapeCharReplacement)
-				.append("', ").append("allowRedirects=").append(allowRedirects).append(", ")
-				.append("onDemandUpdateStatusChange=").append(onDemandUpdateStatusChange).append(", ")
-				.append("encoderName='").append(encoderName).append("', ").append("decoderName='").append(decoderName)
-				.append("', ").append("clientDataAccept='").append(clientDataAccept).append("', ")
-				.append("shouldUnregisterOnShutdown='").append(shouldUnregisterOnShutdown)
-				.append("shouldEnforceRegistrationAtInit='").append(shouldEnforceRegistrationAtInit).append("', ")
-				.append("order='").append(order).append("'}").toString();
+		return "EurekaClientConfigBean{" + "propertyResolver=" + propertyResolver + ", " + "enabled=" + enabled + ", " + "transport=" + transport + ", " + "registryFetchIntervalSeconds=" + registryFetchIntervalSeconds + ", " + "instanceInfoReplicationIntervalSeconds=" + instanceInfoReplicationIntervalSeconds + ", " + "initialInstanceInfoReplicationIntervalSeconds=" + initialInstanceInfoReplicationIntervalSeconds + ", " + "eurekaServiceUrlPollIntervalSeconds=" + eurekaServiceUrlPollIntervalSeconds + ", " + "proxyPort='" + proxyPort + "', " + "proxyHost='" + proxyHost + "', " + "proxyUserName='" + proxyUserName + "', " + "proxyPassword='" + proxyPassword + "', " + "eurekaServerReadTimeoutSeconds=" + eurekaServerReadTimeoutSeconds + ", " + "eurekaServerConnectTimeoutSeconds=" + eurekaServerConnectTimeoutSeconds + ", " + "backupRegistryImpl='" + backupRegistryImpl + "', " + "eurekaServerTotalConnections=" + eurekaServerTotalConnections + ", " + "eurekaServerTotalConnectionsPerHost=" + eurekaServerTotalConnectionsPerHost + ", " + "eurekaServerURLContext='" + eurekaServerURLContext + "', " + "eurekaServerPort='" + eurekaServerPort + "', " + "eurekaServerDNSName='" + eurekaServerDNSName + "', " + "region='" + region + "', " + "eurekaConnectionIdleTimeoutSeconds=" + eurekaConnectionIdleTimeoutSeconds + ", " + "registryRefreshSingleVipAddress='" + registryRefreshSingleVipAddress + "', " + "heartbeatExecutorThreadPoolSize=" + heartbeatExecutorThreadPoolSize + ", " + "heartbeatExecutorExponentialBackOffBound=" + heartbeatExecutorExponentialBackOffBound + ", " + "cacheRefreshExecutorThreadPoolSize=" + cacheRefreshExecutorThreadPoolSize + ", " + "cacheRefreshExecutorExponentialBackOffBound=" + cacheRefreshExecutorExponentialBackOffBound + ", " + "serviceUrl=" + serviceUrl + ", " + "gZipContent=" + gZipContent + ", " + "useDnsForFetchingServiceUrls=" + useDnsForFetchingServiceUrls + ", " + "registerWithEureka=" + registerWithEureka + ", " + "preferSameZoneEureka=" + preferSameZoneEureka + ", " + "logDeltaDiff=" + logDeltaDiff + ", " + "disableDelta=" + disableDelta + ", " + "fetchRemoteRegionsRegistry='" + fetchRemoteRegionsRegistry + "', " + "availabilityZones=" + availabilityZones + ", " + "filterOnlyUpInstances=" + filterOnlyUpInstances + ", " + "fetchRegistry=" + fetchRegistry + ", " + "dollarReplacement='" + dollarReplacement + "', " + "escapeCharReplacement='" + escapeCharReplacement + "', " + "allowRedirects=" + allowRedirects + ", " + "onDemandUpdateStatusChange=" + onDemandUpdateStatusChange + ", " + "encoderName='" + encoderName + "', " + "decoderName='" + decoderName + "', " + "clientDataAccept='" + clientDataAccept + "', " + "shouldUnregisterOnShutdown='" + shouldUnregisterOnShutdown + "shouldEnforceRegistrationAtInit='" + shouldEnforceRegistrationAtInit + "', " + "order='" + order + "'}";
 	}
 
 }

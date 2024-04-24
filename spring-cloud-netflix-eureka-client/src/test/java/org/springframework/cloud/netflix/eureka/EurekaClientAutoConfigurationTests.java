@@ -234,9 +234,9 @@ class EurekaClientAutoConfigurationTests {
 
 		setupContext(RefreshAutoConfiguration.class);
 		EurekaInstanceConfigBean instance = this.context.getBean(EurekaInstanceConfigBean.class);
-		assertThat(instance.getStatusPageUrlPath().equals("/management/actuator/info"))
+		assertThat("/management/actuator/info".equals(instance.getStatusPageUrlPath()))
 				.as("Wrong status page: " + instance.getStatusPageUrlPath()).isTrue();
-		assertThat(instance.getHealthCheckUrlPath().equals("/management/actuator/health"))
+		assertThat("/management/actuator/health".equals(instance.getHealthCheckUrlPath()))
 				.as("Wrong health check: " + instance.getHealthCheckUrlPath()).isTrue();
 	}
 
@@ -304,9 +304,9 @@ class EurekaClientAutoConfigurationTests {
 
 		setupContext(RefreshAutoConfiguration.class);
 		EurekaInstanceConfigBean instance = this.context.getBean(EurekaInstanceConfigBean.class);
-		assertThat(instance.getStatusPageUrlPath().equals("/management/actuator/info"))
+		assertThat("/management/actuator/info".equals(instance.getStatusPageUrlPath()))
 				.as("Wrong status page: " + instance.getStatusPageUrlPath()).isTrue();
-		assertThat(instance.getHealthCheckUrlPath().equals("/management/actuator/health"))
+		assertThat("/management/actuator/health".equals(instance.getHealthCheckUrlPath()))
 				.as("Wrong health check: " + instance.getHealthCheckUrlPath()).isTrue();
 	}
 

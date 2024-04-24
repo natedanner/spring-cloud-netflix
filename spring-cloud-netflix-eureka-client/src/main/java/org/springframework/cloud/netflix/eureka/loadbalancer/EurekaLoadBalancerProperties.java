@@ -31,7 +31,7 @@ public class EurekaLoadBalancerProperties {
 	/**
 	 * Used to determine whether we should try to get the `zone` value from host name.
 	 */
-	private boolean approximateZoneFromHostname = false;
+	private boolean approximateZoneFromHostname;
 
 	public boolean isApproximateZoneFromHostname() {
 		return approximateZoneFromHostname;

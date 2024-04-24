@@ -174,8 +174,7 @@ public class CloudJacksonJson extends LegacyJacksonJson {
 		@Override
 		public InstanceInfo deserialize(JsonParser jp, DeserializationContext context) throws IOException {
 			InstanceInfo info = super.deserialize(jp, context);
-			InstanceInfo updated = updateIfNeeded(info);
-			return updated;
+			return updateIfNeeded(info);
 		}
 
 	}

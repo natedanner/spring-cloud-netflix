@@ -144,7 +144,7 @@ public class EurekaAutoServiceRegistration
 	public void onApplicationEvent(WebServerInitializedEvent event) {
 		// TODO: take SSL into account
 		String contextName = event.getApplicationContext().getServerNamespace();
-		if (contextName == null || !contextName.equals("management")) {
+		if (contextName == null || !"management".equals(contextName)) {
 			int localPort = event.getWebServer().getPort();
 			if (port.get() == 0) {
 				log.info("Updating port to " + localPort);

@@ -114,7 +114,7 @@ public class EurekaServerConfigBean implements EurekaServerConfig {
 
 	private boolean syncWhenTimestampDiffers = true;
 
-	private int registrySyncRetries = 0;
+	private int registrySyncRetries;
 
 	private long registrySyncRetryWaitMs = 30 * 1000;
 
@@ -162,9 +162,9 @@ public class EurekaServerConfigBean implements EurekaServerConfig {
 
 	private boolean batchReplication;
 
-	private boolean rateLimiterEnabled = false;
+	private boolean rateLimiterEnabled;
 
-	private boolean rateLimiterThrottleStandardClients = false;
+	private boolean rateLimiterThrottleStandardClients;
 
 	private Set<String> rateLimiterPrivilegedClients = Collections.emptySet();
 
@@ -178,7 +178,7 @@ public class EurekaServerConfigBean implements EurekaServerConfig {
 
 	private String listAutoScalingGroupsRoleName = "ListAutoScalingGroups";
 
-	private boolean enableReplicatedRequestCompression = false;
+	private boolean enableReplicatedRequestCompression;
 
 	private String jsonCodecName;
 

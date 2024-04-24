@@ -54,7 +54,7 @@ public class EurekaConfigServerBootstrapper implements BootstrapRegistryInitiali
 
 		registry.registerIfAbsent(ConfigServerInstanceProvider.Function.class, context -> {
 			if (!getDiscoveryEnabled(context)) {
-				return (id) -> Collections.emptyList();
+				return id -> Collections.emptyList();
 			}
 			EurekaClientConfigBean config = context.get(EurekaClientConfigBean.class);
 			EurekaHttpClient httpClient = new RestTemplateTransportClientFactory(

@@ -35,7 +35,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class ApplicationDashboardPathTests {
 
 	@Value("${local.server.port}")
-	private int port = 0;
+	private int port;
 
 	@Test
 	void catalogLoads() {

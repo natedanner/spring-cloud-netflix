@@ -67,7 +67,7 @@ class RefreshablePeerEurekaNodesTests {
 	private PeerEurekaNodes peerEurekaNodes;
 
 	@Value("${local.server.port}")
-	private int port = 0;
+	private int port;
 
 	private static final String DEFAULT_ZONE = "eureka.client.service-url.defaultZone";
 
@@ -124,8 +124,8 @@ class RefreshablePeerEurekaNodesTests {
 				"eureka.client.service-url.defaultZone=https://default-host3:8678/eureka/");
 		this.context.publishEvent(
 				new EnvironmentChangeEvent(Collections.singleton("eureka.client.availability-zones.region3")));
-		assertThat(this.peerEurekaNodes.getPeerEurekaNodes().get(0).getServiceUrl()
-				.equals("https://default-host3:8678/eureka/")).isTrue();
+		assertThat("https://default-host3:8678/eureka/"
+				.equals(this.peerEurekaNodes.getPeerEurekaNodes().get(0).getServiceUrl())).isTrue();
 
 		changeProperty("eureka.client.availability-zones.region4=region4-zone");
 		this.context.publishEvent(

@@ -45,7 +45,7 @@ import static com.netflix.discovery.shared.transport.EurekaHttpResponse.anEureka
  */
 public class WebClientEurekaHttpClient implements EurekaHttpClient {
 
-	private WebClient webClient;
+	private final WebClient webClient;
 
 	public WebClientEurekaHttpClient(WebClient webClient) {
 		this.webClient = webClient;

@@ -84,9 +84,7 @@ public class EurekaInstanceCanceledEvent extends ApplicationEvent {
 
 	@Override
 	public String toString() {
-		return new StringBuilder("EurekaInstanceCanceledEvent{").append("appName='").append(appName).append("', ")
-				.append("serverId='").append(serverId).append("', ").append("replication=").append(replication)
-				.append("}").toString();
+		return "EurekaInstanceCanceledEvent{" + "appName='" + appName + "', " + "serverId='" + serverId + "', " + "replication=" + replication + "}";
 	}
 
 }

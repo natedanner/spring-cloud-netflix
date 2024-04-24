@@ -77,7 +77,7 @@ class EurekaAutoServiceRegistrationIntegrationTests {
 
 	public static class PreEventListener implements ApplicationListener<InstancePreRegisteredEvent> {
 
-		public boolean wasFired = false;
+		public boolean wasFired;
 
 		public Registration registration;
 
@@ -91,7 +91,7 @@ class EurekaAutoServiceRegistrationIntegrationTests {
 
 	public static class PostEventListener implements ApplicationListener<InstanceRegisteredEvent> {
 
-		public boolean wasFired = false;
+		public boolean wasFired;
 
 		public EurekaInstanceConfigBean config;
 

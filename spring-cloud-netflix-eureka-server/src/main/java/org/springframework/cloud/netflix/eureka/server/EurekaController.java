@@ -111,7 +111,7 @@ public class EurekaController {
 	protected void populateBase(HttpServletRequest request, Map<String, Object> model) {
 		model.put("time", new Date());
 		model.put("basePath", "/");
-		model.put("dashboardPath", this.dashboardPath.equals("/") ? "" : this.dashboardPath);
+		model.put("dashboardPath", "/".equals(this.dashboardPath) ? "" : this.dashboardPath);
 		populateHeader(model);
 		populateNavbar(request, model);
 	}

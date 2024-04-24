@@ -150,7 +150,7 @@ class EurekaServiceRegistryTests {
 		final AtomicBoolean applicationsFetched = new AtomicBoolean();
 
 		CloudEurekaClient eurekaClient = mock(CloudEurekaClient.class);
-		when(eurekaClient.getApplications()).thenAnswer((answer) -> {
+		when(eurekaClient.getApplications()).thenAnswer(answer -> {
 			applicationsFetched.set(true);
 			return answer;
 		});

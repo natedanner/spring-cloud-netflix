@@ -50,7 +50,7 @@ class ApplicationTests {
 	private static final String BASE_PATH = new WebEndpointProperties().getBasePath();
 
 	@LocalServerPort
-	private int port = 0;
+	private int port;
 
 	@Autowired
 	private ServerCodecs serverCodecs;

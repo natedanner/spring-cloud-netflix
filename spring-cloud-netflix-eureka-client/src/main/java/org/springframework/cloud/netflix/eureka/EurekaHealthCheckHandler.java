@@ -67,14 +67,14 @@ import org.springframework.util.Assert;
 public class EurekaHealthCheckHandler
 		implements HealthCheckHandler, ApplicationContextAware, InitializingBean, Ordered, Lifecycle {
 
-	private static final Map<Status, InstanceInfo.InstanceStatus> STATUS_MAPPING = new HashMap<>() {
-		{
-			put(Status.UNKNOWN, InstanceStatus.UNKNOWN);
-			put(Status.OUT_OF_SERVICE, InstanceStatus.DOWN);
-			put(Status.DOWN, InstanceStatus.DOWN);
-			put(Status.UP, InstanceStatus.UP);
-		}
-	};
+	private static final Map<Status, InstanceInfo.InstanceStatus> STATUS_MAPPING;
+	static {
+		STATUS_MAPPING = new HashMap<>();
+		STATUS_MAPPING.put(Status.UNKNOWN, InstanceStatus.UNKNOWN);
+		STATUS_MAPPING.put(Status.OUT_OF_SERVICE, InstanceStatus.DOWN);
+		STATUS_MAPPING.put(Status.DOWN, InstanceStatus.DOWN);
+		STATUS_MAPPING.put(Status.UP, InstanceStatus.UP);
+	}
 
 	private final StatusAggregator statusAggregator;
 

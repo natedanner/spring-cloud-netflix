@@ -128,9 +128,8 @@ public class EurekaConfigServerBootstrapperIT {
 	}
 
 	SpringApplicationBuilder setup(String... env) {
-		SpringApplicationBuilder builder = new SpringApplicationBuilder(TestConfig.class)
+		return new SpringApplicationBuilder(TestConfig.class)
 				.properties(addDefaultEnv(env));
-		return builder;
 	}
 
 	private String[] addDefaultEnv(String[] env) {

@@ -46,7 +46,7 @@ class ApplicationServletPathTests {
 	private static final String BASE_PATH = new WebEndpointProperties().getBasePath();
 
 	@LocalServerPort
-	private int port = 0;
+	private int port;
 
 	@Test
 	void catalogLoads() {
